@@ -11,26 +11,24 @@
 </head>
 <body>
     <?php include 'navbar.php'; ?>
-    <div class="page-container">
-        <section class="login-section">
-            <div class="logo-part">
-                <div class="logo-text">
-                    <h1>Camagru</h1>
-                    <p>Welcome to Camagru! Share your best shots, and explore moments with friends.</p>
-                </div>
+    <section class="login-section">
+        <div class="logo-part">
+            <div class="logo-text">
+                <h1>Camagru</h1>
+                <p>Welcome to Camagru! Share your best shots, and explore moments with friends.</p>
             </div>
-            <div class="line"></div>
-            <div class="login-component">
-                <form action="../src/login.php" method="post">
-                    <input type="text" name="username" placeholder="Username" required>
-                    <input type="password" name="password" placeholder="Password" required>
-                    <button type="submit" name="login" class="login-button">Log in</button>
-                </form>
-                <div class="forget-password">Forgot password?</div>
-            </div>
-            <button id="register-button">Create new account</button>
-        </section>
-    </div>
+        </div>
+        <div class="line"></div>
+        <div class="login-component">
+            <form action="../src/login.php" method="post">
+                <input type="text" name="username" placeholder="Username" required>
+                <input type="password" name="password" placeholder="Password" required>
+                <button type="submit" name="login" class="login-button">Log in</button>
+            </form>
+            <div class="forget-password">Forgot password?</div>
+        </div>
+        <button id="register-button">Create new account</button>
+    </section>
     <?php include 'footer.php'; ?>
 </body>
 </html>
