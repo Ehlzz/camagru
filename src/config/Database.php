@@ -1,11 +1,21 @@
 <?php
     class Database {
         private $host = 'localhost';
-        private $db_name = 'camagru';
-        private $username = 'phpmyadmin';
-        private $password = 'root';
+        private $db_name = 'camagru_db';
+        private $username = 'camagru_user';
+        private $password = '42424242';
         private $conn;
 
+        public function __construct()
+        {
+            $host = 'localhost';
+            $db_name = 'camagru_db';
+            $username = 'camagru_user';
+            $password = '42424242';
+            $conn;
+    
+
+        }
 
         public function getConnection() {
             $this->conn = null;

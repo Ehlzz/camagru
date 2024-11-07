@@ -27,22 +27,27 @@ h1, p {
     border-radius: 0 0 10px 10px;
 }
 
-.navbar-menu {
+.navbar-menu-left, .navbar-menu-right {
     list-style: none;
     display: flex;
     gap: 30px;
     padding: 0;
+    margin: 0;
 }
 
-.navbar-menu li a {
+.navbar-menu-left li a, .navbar-menu-right li a {
     text-decoration: none;
     color: #ecf0f1;
     font-weight: bold;
     transition: color 0.3s;
 }
 
-.navbar-menu li a:hover {
+.navbar-menu-left li a:hover, .navbar-menu-right li a:hover {
     color: #bdc3c7;
+}
+
+.navbar-menu-right {
+    margin-right: 5%;
 }
 
 /* ------------------------------------------------------------- */
@@ -75,7 +80,13 @@ h1, p {
 
 .forget-password {
     text-align: center;
+    color: black;
     margin-top: 10px;
+}
+
+.forget-password a {
+    color: black;
+    text-decoration: none;
 }
 
 .forget-password:hover {
@@ -196,6 +207,215 @@ h1, p {
 .footer-text a:hover {
     text-decoration: underline;
 }
+
+/* ------------------------------------------------------------- */
+/* ------------------- REGISTRATION-SUCCESS -------------------- */
+/* ------------------------------------------------------------- */
+
+.registration-success {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #ffffff;
+    padding: 40px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    border-radius: 15px;
+    max-width: 450px;
+    width: 90%;
+    text-align: center;
+    animation: fadeIn 1.2s ease-out;
+    margin: 200px auto;
+}
+
+.logo-text h1 {
+    font-family: 'Pacifico', cursive;
+    color: #34495e;
+    font-size: 3rem;
+    margin-bottom: 10px;
+}
+
+.validation-text h2 {
+    color: #4caf50;
+    font-size: 1.8rem;
+    margin: 20px 0 10px;
+}
+
+.validation-text p {
+    font-size: 1rem;
+    margin: 5px 0 15px;
+    color: #555;
+}
+
+.mail-logo {
+    border-radius: 50%;
+    background-color: #4caf50;
+    width: 45px;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    margin-left: calc(50% - 22.5px);
+    z-index: 2;
+}
+
+.mail-animation {
+    border-radius: 50%;
+    background-color: rgba(76, 175, 80, 0.2);
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    z-index: 1;
+    animation: pulse 2s infinite;
+}
+
+.fa-envelope {
+    color: #ffffff;
+    font-size: 1.2rem;
+}
+
+.validation-text a {
+    color: #4caf50;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.validation-text a:hover {
+    color: #388e3c;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.2);
+    }
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* ------------------------------------------------------------- */
+/* --------------------- FORGOT PASSWORD ----------------------- */
+/* ------------------------------------------------------------- */
+
+
+
+.forgot-password{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #ffffff;
+    padding: 40px;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+    border-radius: 15px;
+    max-width: 400px;
+    width: 90%;
+    text-align: center;
+    animation: fadeIn 1.2s ease-out;
+    margin: 200px auto;
+}
+
+.forgot-password h1 {
+    font-family: 'Pacifico', cursive;
+    color: #34495e;
+    font-size: 3rem;
+    margin-bottom: 15px;
+}
+
+.forgot-password h2 {
+    color: #ff4242;
+    font-size: 1.6rem;
+    margin: 20px 0 15px;
+}
+
+.forgot-password p {
+    font-size: 1rem;
+    margin: 8px 0;
+    color: #555;
+}
+
+.forgot-password .mail-logo {
+    border-radius: 50%;
+    background-color: #ff4242;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    margin-left: calc(50% - 25px);
+    z-index: 2;
+}
+
+.forgot-password .mail-animation {
+    border-radius: 50%;
+    background-color: rgba(231, 91, 102, 0.2);
+    width: 55px;
+    height: 55px;
+    position: absolute;
+    z-index: 1;
+    animation: pulse 2s infinite;
+}
+
+.fa-envelope {
+    color: #ffffff;
+    font-size: 1.5rem;
+}
+
+.validation-text a {
+    color: #4caf50;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.validation-text a:hover {
+    color: #388e3c;
+}
+
+.form-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    max-width: 400px;
+    margin: 20px auto;
+}
+
+form input[type="email"] {
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 100%;
+}
+
+form button {
+    background-color: #4caf50;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+form button:hover {
+    background-color: #388e3c;
+}
+
 
 /* ------------------------------------------------------------- */
 /* ------------------------ RESPONSIVE ------------------------- */

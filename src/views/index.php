@@ -11,24 +11,18 @@
 </head>
 <body>
     <?php include 'navbar.php'; ?>
-    <section class="login-section">
-        <div class="logo-part">
-            <div class="logo-text">
-                <h1>Camagru</h1>
-                <p>Welcome to Camagru! Share your best shots, and explore moments with friends.</p>
-            </div>
-        </div>
-        <div class="line"></div>
-        <div class="login-component">
-            <form action="../src/login.php" method="post">
-                <input type="text" name="username" placeholder="Username" required>
-                <input type="password" name="password" placeholder="Password" required>
-                <button type="submit" name="login" class="login-button">Log in</button>
-            </form>
-            <div class="forget-password">Forgot password?</div>
-        </div>
-        <button id="register-button">Create new account</button>
-    </section>
     <?php include 'footer.php'; ?>
+    <?php 
+        require_once __DIR__ . '/../controllers/PasswordController.php';
+
+        $controller = new PasswordController();
+
+        if ($_SERVER["REQUEST_METHOD"] === "POST") {
+            $controller->handleFormSubmission();
+        } else {
+            $controller->showForm();
+        }
+
+    ?>
 </body>
 </html>
