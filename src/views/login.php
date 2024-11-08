@@ -20,11 +20,16 @@
         </div>
         <div class="line"></div>
         <div class="login-component">
-            <form action="../src/login.php" method="post">
-                <input type="text" name="username" placeholder="Username" required>
+            <form action="../login.php" method="post">
+                <input type="text" name="email" placeholder="Email" required>
                 <input type="password" name="password" placeholder="Password" required>
                 <button type="submit" name="login" class="login-button">Log in</button>
             </form>
+            <?php 
+                if (isset($_GET['action']) && $_GET['action'] === 'failed') {
+                    echo '<div class="error-message">Incorrect password/email</div>';
+                }
+            ?>
             <div class="forget-password"><a href="forgotPasswordForm.php">Forgot password?</a></div>
         </div>
         <button id="register-button">Create new account</button>

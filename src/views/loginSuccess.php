@@ -11,22 +11,22 @@
     <script src="/public/js/main-page.js" defer></script>
 </head>
 <body>
-    <?php include 'navbar.php'?>
+    <?php include 'navbar.php' ?>
+    <?php 
+        if (isset($_SESSION['user_email'])) {
+            $username = $_SESSION['username'];
+        } else
+            $username = 'Undefined';
+    ?>
     <section class="registration-success">
         <div class="logo-text">
             <h1>Camagru</h1>
         </div>
         <div class="validation-text">
-            <h2>Congratulations!</h2>
-            <p>Welcome to Camagru, your account has been successfully created!</p>
-            <div class="mail-logo">
-                <div class="mail-animation"></div>
-                <i class="fa-solid fa-envelope"></i>
-            </div>
-            <p>A confirmation email has been sent to your address. Click the link in that email to activate your account and start exploring.</p>
-            <p>You can now <a href="login.php">log in</a> with your credentials.</p>
+        <h2>Congratulations!</h2>
+        <p>Welcome to Camagru, you are successfully logged in, <?php echo htmlspecialchars($username); ?>!</p>
         </div>
     </section>
-    <?php include 'footer.php'?>
+    <?php include 'footer.php' ?>
 </body>
 </html>

@@ -12,21 +12,19 @@
 </head>
 <body>
     <?php include 'navbar.php'?>
-    <section class="registration-success">
+    <section class="error-page">
         <div class="logo-text">
             <h1>Camagru</h1>
         </div>
         <div class="validation-text">
-            <h2>Congratulations!</h2>
-            <p>Welcome to Camagru, your account has been successfully created!</p>
-            <div class="mail-logo">
-                <div class="mail-animation"></div>
-                <i class="fa-solid fa-envelope"></i>
-            </div>
-            <p>A confirmation email has been sent to your address. Click the link in that email to activate your account and start exploring.</p>
-            <p>You can now <a href="login.php">log in</a> with your credentials.</p>
+            <h2>Error</h2>
+            <p>An error occurred, please return to the <a href="/src/views/index.php">home page</a></p>
         </div>
     </section>
-    <?php include 'footer.php'?>
+    <?php include 'footer.php';
+        ini_set('display_errors', 1);
+        ini_set('display_startup_errors', 1);
+        error_reporting(E_ALL);
+    ?>
 </body>
 </html>

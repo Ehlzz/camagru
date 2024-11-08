@@ -1,7 +1,7 @@
-<DOCTYPE html>
+<!DOCTYPE html>
 <html>
 <head>
-    <title>Camagru - Réinitialisation de mot de passe</title>
+    <title>Camagru - Password Reset</title>
     <link rel="stylesheet" href="/public/css/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -17,13 +17,13 @@
             <h1>Camagru</h1>
         </div>
         <div class="validation-text">
-            <h2>Réinitialisation de mot de passe</h2>
-            <p>Nous avons envoyé un email à ton adresse. Clique sur le lien dans cet email pour réinitialiser ton mot de passe.</p>
+            <h2>Password Reset</h2>
+            <p>We have sent an email to your address. Click the link in that email to reset your password.</p>
             <div class="mail-logo">
                 <div class="mail-animation"></div>
                 <i class="fa-solid fa-envelope"></i>
             </div>
-            <p>Une fois terminé, <a href="login.php">connecte-toi ici</a> avec ton nouveau mot de passe.</p>
+            <p>Once done, <a href="login.php">log in here</a> with your new password.</p>
         </div>
     </section>
     <?php include 'footer.php'?>

@@ -17,6 +17,31 @@
             return ($stmt->rowCount() > 0);
         }
 
+        public function checkUserLogs($email, $password)
+        {
+            $stmt = $this->_db->prepare("SELECT * FROM users WHERE email = :email");
+            $stmt->execute(['email' => $email]);
+            
+            if ($stmt->rowCount() == 0) {
+                return false;
+            }
+            $row = $stmt->fetch(PDO::FETCH_ASSOC);
+            if (password_verify($password, $row['password'])) {
+                if (session_status() === PHP_SESSION_NONE) {
+                    session_start();
+                }
+                $_SESSION['user_id'] = $row['id'];
+                $_SESSION['user_email'] = $row['email'];
+                $_SESSION['username'] = $row['username'];
+                $_SESSION['created_at'] = $row['created_at'];
+                $_SESSION['updated_at'] = $row['updated_at'];
+                $_SESSION['logged_in'] = true;
+                return true;
+            }
+            return false;
+        }
+
+
         public function registerUser($username, $email, $password)
         {
             if ($this->checkIfUserExists($username, $email)) {

@@ -11,18 +11,10 @@
 </head>
 <body>
     <?php include 'navbar.php'; ?>
-    <?php include 'footer.php'; ?>
-    <?php 
-        require_once __DIR__ . '/../controllers/PasswordController.php';
-
-        $controller = new PasswordController();
-
-        if ($_SERVER["REQUEST_METHOD"] === "POST") {
-            $controller->handleFormSubmission();
-        } else {
-            $controller->showForm();
-        }
-
+    <?php include 'footer.php';
+        ini_set('display_errors', 1);
+        ini_set('display_startup_errors', 1);
+        error_reporting(E_ALL);
     ?>
 </body>
 </html>

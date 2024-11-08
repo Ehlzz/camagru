@@ -1,7 +1,7 @@
 <?php 
     class PasswordController {
         public function showForm() {
-            include 'src/views/forgetPasswordForm.php';
+            include 'src/views/forgotPasswordForm.php';
         }
 
         public function handleFormSubmission() {
