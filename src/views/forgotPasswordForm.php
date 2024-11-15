@@ -20,8 +20,9 @@
             <h2>Password Reset</h2>
             <p>Enter your email address to receive a reset link:</p>
             <form action="../forgotPassword.php?action=forgotPassword" method="post">
-                <input type="email" name="email" placeholder="Your email" required>
+                <input class="form-input" type="email" name="email" placeholder="Your email" required>
                 <button type="submit">Send Reset Link</button>
+                <div class="cancel-button"><a href="login.php">Cancel</a></div>
             </form>
         </div>
     </section>

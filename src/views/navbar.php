@@ -2,7 +2,7 @@
     require_once __DIR__ . '/../controllers/SessionController.php';
     session_start();
     $sessionController = new SessionController();
-    $isLoggedIn = $sessionController->getLogged(); // Utiliser la méthode getLogged directement
+    $isLoggedIn = $sessionController->getLogged();
     if ($isLoggedIn) {
         $username = $sessionController->getUsername();
     }
@@ -22,7 +22,6 @@
             <li><a href="/src/views/login.php">Login</a></li>
             <li><a href="/src/views/register.php">Register</a></li>
         <?php endif; 
-    var_dump($_SESSION);
         ?>
     </ul>
 </div>
