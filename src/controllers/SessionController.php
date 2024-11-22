@@ -44,6 +44,11 @@ class SessionController {
             'user_id' => $this->getUserId()
         ];
     }
+
+    public function redirectUser($url) {
+        header("Location: $url");
+        exit();
+    }
 }
 
 ?>

@@ -10,11 +10,7 @@
     <script src="/public/js/main-page.js" defer></script>
 </head>
 <body>
-    <?php include 'navbar.php'; ?>
-    <?php include 'footer.php';
-        ini_set('display_errors', 1);
-        ini_set('display_startup_errors', 1);
-        error_reporting(E_ALL);
-    ?>
+    <?php include 'login.php'; ?>
+    <?php include 'footer.php'; ?>
 </body>
 </html>

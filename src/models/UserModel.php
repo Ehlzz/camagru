@@ -54,7 +54,7 @@
             $stmt->bindValue(':username', $username);
             $stmt->bindValue(':email', $email);
             $stmt->bindValue(':password', $hashedPassword);
-
+            mail('camagruehalliez@gmail.com', 'My Subject', 'pitie recoit le');
             if ($stmt->execute()) {
                 return true;
             } else {

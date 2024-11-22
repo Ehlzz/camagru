@@ -73,6 +73,36 @@
                 if ($this->userModel->registerUser($this->userModel->username, $this->userModel->email, $this->userModel->password))
                 {
                     echo "User registered successfully.";
+                    require '../vendor/autoload.php';
+
+                    $mail = new PHPMailer(true);
+
+                    try {
+                        // Configuration SMTP de Gmail
+                        $mail->isSMTP();
+                        $mail->Host = 'smtp.gmail.com';  // Serveur SMTP de Gmail
+                        $mail->SMTPAuth = true;
+                        $mail->Username = 'camagruehalliez@gmail.com'; // Votre adresse e-mail Gmail
+                        $mail->Password = 'sekz lunc rypd irua';   // Votre mot de passe d'application généré
+                        $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
+                        $mail->Port = 587;  // Port SMTP de Gmail
+
+                        // Expéditeur et destinataire
+                        $mail->setFrom('camagruehalliez@gmail.com', 'Votre Nom');
+                        $mail->addAddress($this->userModel->email); // Ajouter un destinataire
+
+                        // Contenu du message
+                        $mail->isHTML(true);
+                        $mail->Subject = 'Bonjour je suis un pirate';
+                        $mail->Body    = 'Je vais te tuer si tu ne donnes pas 20 euros a ton meilleur ami emile';
+
+                        // Envoi
+                        $mail->send();
+                        echo 'L\'e-mail a été envoyé avec succès.';
+                    } catch (Exception $e) {
+                        echo "L'e-mail n'a pas pu être envoyé. Erreur : {$mail->ErrorInfo}";
+                    }
+
                     header("Location: views/registrationsuccess.php");
                     exit();
                 } else {

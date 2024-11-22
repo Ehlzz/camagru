@@ -11,7 +11,6 @@
     <script src="/public/js/main-page.js" defer></script>
 </head>
 <body>
-    <?php include 'navbar.php'?>
     <section class="registration-success">
         <div class="logo-text">
             <h1>Camagru</h1>

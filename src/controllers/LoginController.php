@@ -28,7 +28,7 @@
                 $this->userModel = new UserModel($this->database);
                 if ($this->userModel->checkUserLogs($email, $password))
                 {
-                    header("Location: views/loginSuccess.php");
+                    header("Location: views/home.php");
                     exit();
                 } else {
                     header("Location: views/login.php?action=failed");

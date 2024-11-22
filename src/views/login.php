@@ -10,7 +10,6 @@
     <script src="/public/js/main-page.js" defer></script>
 </head>
 <body>
-    <?php include 'navbar.php'; ?>
     <section class="login-section">
         <div class="logo-part">
             <div class="logo-text">
