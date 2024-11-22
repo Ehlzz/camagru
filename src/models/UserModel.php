@@ -41,6 +41,17 @@
             return false;
         }
 
+        public function storePasswordResetToken($email, $token)
+        {
+            $expiration = date("Y-m-d H:i:s", strtotime("+1 hour"));
+
+            $sql = "UPDATE users SET reset_token = ?, reset_token_expiry = ? WHERE email = ?";
+            $stmt = $this->_db->prepare($sql);
+            $stmt->bind_param("sss", $token, $expiration, $email);
+
+            return $stmt->execute() && $stmt->affected_rows > 0;
+        }
+
 
         public function registerUser($username, $email, $password)
         {
@@ -61,6 +72,22 @@
                 return false;
             }
         }
+
+        public function registerVerification($email, $code)
+        {
+            $stmt = $this->_db->prepare("INSERT INTO user_verification (email, verification_code, expiration_date) 
+                                         VALUES (:email, :verification_code, DATE_ADD(NOW(), INTERVAL 3 MINUTE))");
+        
+            $stmt->bindValue(':email', $email);
+            $stmt->bindValue(':verification_code', $code);
+        
+            if ($stmt->execute()) {
+                return true;
+            } else {
+                return false;
+            }
+        }
+        
 
     }
 ?>

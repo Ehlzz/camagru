@@ -6,7 +6,7 @@
     
     require_once __DIR__ . '/controllers/PasswordController.php';
 
-    $action = isset($_GET['action']) ? $_GET['action'] : 'forgotPassword';
+    $action = isset($_GET['action']) ? $_GET['action'] : 'null';
 
     $controller = new PasswordController();
 

@@ -1,12 +1,3 @@
-<?php
-    require_once __DIR__ . '/../controllers/SessionController.php';
-    session_start();
-    $sessionController = new SessionController();
-    $isLoggedIn = $sessionController->getLogged();
-    if ($isLoggedIn) {
-        $sessionController->redirectUser("home.php");
-    }
-?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -24,19 +15,16 @@
             <div class="logo-part">
                 <div class="logo-text">
                     <h1>Camagru</h1>
-                    <p>Welcome to Camagru! Join our community, share your best shots, and explore moments with friends.</p>
+                    <p>You have reached the password reset page.</p>
                 </div>
             </div>
             <div class="line"></div>
             <div class="login-component">
                 <form action="../register.php?action=register" method="post">
-                    <input type="text" name="username" placeholder="Username" required>
-                    <input type="email" name="email" placeholder="Email" required>
                     <input type="password" name="password" placeholder="Password" required>
-                    <button type="submit" name="register">Register</button>
+                    <button type="submit" name="register">Change password</button>
                 </form>
             </div>
-            <button id="login-button">Log in</button>
         </section>
     </div>
 

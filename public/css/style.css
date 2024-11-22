@@ -340,6 +340,11 @@ h1, p {
     text-align: center;
 }
 
+.success-message {
+    color: green;
+    margin-top: 10px;
+    text-align: center;
+}
 
 /* ------------------------------------------------------------- */
 /* --------------------- FORGOT PASSWORD ----------------------- */

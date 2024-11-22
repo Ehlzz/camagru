@@ -1,3 +1,13 @@
+<?php
+    require_once __DIR__ . '/../controllers/SessionController.php';
+    session_start();
+    $sessionController = new SessionController();
+    $isLoggedIn = $sessionController->getLogged();
+    if ($isLoggedIn) {
+        $sessionController->redirectUser("home.php");
+    }
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -24,9 +34,31 @@
                 <input type="password" name="password" placeholder="Password" required>
                 <button type="submit" name="login" class="login-button">Log in</button>
             </form>
-            <?php 
-                if (isset($_GET['action']) && $_GET['action'] === 'failed') {
-                    echo '<div class="error-message">Incorrect password/email</div>';
+            <?php
+                if (isset($_GET['action'])) {
+                    $message = '';
+                    $action = $_GET['action'];
+                    $class = 'error-message';
+
+                    switch ($action) {
+                        case 'failed':
+                            $message = 'Incorrect password/email';
+                            break;
+                        case 'VerificationGranted':
+                            $message = 'Your account is now verified.';
+                            $class = 'success-message';
+                            break;
+                        case 'VerificationFailed':
+                            $message = 'Code incorrect/expired';
+                            break;
+                        default:
+                            $message = '';
+                            break;
+                    }
+
+                    if (!empty($message)) {
+                        echo '<div class="' . htmlspecialchars($class, ENT_QUOTES, 'UTF-8') . '">' . htmlspecialchars($message, ENT_QUOTES, 'UTF-8') . '</div>';
+                    }
                 }
             ?>
             <div class="forget-password"><a href="forgotPasswordForm.php">Forgot password?</a></div>
